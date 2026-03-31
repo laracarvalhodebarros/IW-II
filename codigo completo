@@ -1,0 +1,61 @@
+// Exercício 7 — Contador de cliques
+let botao = document.getElementById("btnClique")
+let texto = document.getElementById("texto")
+let contador = 0
+
+botao.addEventListener("click", function () {
+    contador++
+    console.log("Quantidade de cliques:", contador)
+    alert("O Botão foi pressionado")
+    texto.textContent = "Texto Novo"
+})
+
+// Exercício 8 — Adicionar e remover elementos da lista
+let lista = document.getElementById("lista")
+let botaolista = document.getElementById("btnAdicionar")
+
+botaolista.addEventListener("click", function() {
+    let novoelemento = document.createElement("li")
+    novoelemento.textContent = "Novo Elemento"
+    lista.appendChild(novoelemento)
+})
+
+// Remover o último item com duplo clique
+botaolista.addEventListener("dblclick", function() {
+    if (lista.lastChild) {
+        lista.removeChild(lista.lastChild)
+    }
+})
+
+// Exercício 9 — Interação com teclado
+let inputnome = document.getElementById("inputNome")
+let botaonome = document.getElementById("btnMostrar")
+
+botaonome.addEventListener("click", function () {
+    alert("O nome digitado foi: " + inputnome.value)
+})
+
+// Detectar tecla pressionada no input
+inputnome.addEventListener("keydown", function(event) {
+    console.log("Tecla pressionada:", event.key)
+})
+
+// Exercício 10 — Eventos de mouse na div
+let bloco = document.getElementById("caixa")
+let botaocor = document.getElementById("btnCor")
+let cor = false
+
+// Alternar cores com clique
+botaocor.addEventListener("click", function() {
+    cor = !cor
+    bloco.style.backgroundColor = cor ? "red" : "blue"
+})
+
+// Mouse sobre a div
+bloco.addEventListener("mouseenter", function() {
+    console.log("Mouse entrou na div!")
+})
+
+bloco.addEventListener("mouseleave", function() {
+    console.log("Mouse saiu da div!")
+})
